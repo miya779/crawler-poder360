@@ -1,2 +1,2 @@
-# crawler-valor-economico
-Web Crawler de notícias do site Valor Econômico
+# crawler-poder360
+Web Crawler de notícias do site Poder360
