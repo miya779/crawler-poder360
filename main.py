@@ -47,21 +47,21 @@ except Exception as e:
     print(str(e))
 
 cnx.close()
-(atualizado.*|$)?
+#(atualizado.*|$)?
 
 
-link = 'https://www.poder360.com.br/congresso/policia-prende-suspeitos-e-aponta-flordelis-como-mandante-de-assassinato/'
-news_page = requests.get(link)
-soup = BeautifulSoup(news_page.text,'html.parser')
-article = soup.article
-title = article.h1.text
-summary = soup.find('div',{'class':'resume'}).text.strip().replace('\n','. ')
-text = soup.find('div',{'class':'content wp cropped js-mediator-article'}).text.replace("Continuar lendo","").strip().replace('\n','. ').replace("Receba a newsletter do Poder360todos os dias no seu e-mail","").replace("\xa0", " ")
-date_hour = soup.find('p',{'class': 'author'}).text
-date_hour = re.search('(\d{1,2})\.([a-zA-Z]{3})\.(\d{4})[^0-9]*(\d{1,2})h(\d{1,2})',date_hour)
-date = date_hour.group(3) + "-" + month[date_hour.group(2)] + "-" + date_hour.group(1)
-hour = date_hour.group(4) + ":" + date_hour.group(5) + ":00"
-query = "INSERT INTO news (link, date, time, title, summary,text) VALUES (%s, %s, %s, %s, %s, %s)"
-values = (link, date, hour, title, summary, text)
-cursor.execute(query, values)
-cnx.commit()
+#link = 'https://www.poder360.com.br/congresso/policia-prende-suspeitos-e-aponta-flordelis-como-mandante-de-assassinato/'
+#news_page = requests.get(link)
+#soup = BeautifulSoup(news_page.text,'html.parser')
+#article = soup.article
+#title = article.h1.text
+#summary = soup.find('div',{'class':'resume'}).text.strip().replace('\n','. ')
+#text = soup.find('div',{'class':'content wp cropped js-mediator-article'}).text.replace("Continuar lendo","").strip().replace('\n','. ').replace("Receba a newsletter do Poder360todos os dias no seu e-mail","").replace("\xa0", " ")
+#date_hour = soup.find('p',{'class': 'author'}).text
+#date_hour = re.search('(\d{1,2})\.([a-zA-Z]{3})\.(\d{4})[^0-9]*(\d{1,2})h(\d{1,2})',date_hour)
+#date = date_hour.group(3) + "-" + month[date_hour.group(2)] + "-" + date_hour.group(1)
+#hour = date_hour.group(4) + ":" + date_hour.group(5) + ":00"
+#query = "INSERT INTO news (link, date, time, title, summary,text) VALUES (%s, %s, %s, %s, %s, %s)"
+#values = (link, date, hour, title, summary, text)
+#cursor.execute(query, values)
+#cnx.commit()
